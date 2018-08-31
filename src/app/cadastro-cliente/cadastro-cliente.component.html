@@ -1,0 +1,53 @@
+<div style="display: flex;justify-content:center">
+
+  <mat-card style="width: 500px;">
+    <mat-card-header>
+      <mat-card-title>Cadastro Cliente</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <form #CadastroCliente="ngForm" (submit)="onSubmit()">
+          <!-- Juridica
+          <mat-slide-toggle
+          [color]="'primary'"
+          [checked]="fisica"
+          [disabled]="juridica">
+          Fisica
+          </mat-slide-toggle> -->
+          <mat-form-field>
+            <mat-select placeholder="Tipo Pessoa">
+              <mat-option (click)="fisica = true;juridica = false" value="true" >Fisica</mat-option>
+              <mat-option (click)="juridica = true; fisica = false" [value]="false">Juridica</mat-option>
+            </mat-select>
+          </mat-form-field>
+          <p>
+            <mat-form-field>
+              <input matInput type="text" [(ngModel)]="cliente.nome" placeholder="Nome" [ngModelOptions]="{standalone: true}">
+            </mat-form-field>
+          </p>
+          <p>
+            <mat-form-field>
+              <input matInput type="text" [(ngModel)]="cliente.end" placeholder="Endereco" [ngModelOptions]="{standalone: true}"> 
+            </mat-form-field>
+          </p>
+          <p>
+            <mat-form-field>
+              <input matInput type="text" [(ngModel)]="cliente.tel" placeholder="Telefone" [ngModelOptions]="{standalone: true}">
+            </mat-form-field>
+          </p>
+          <p *ngIf="fisica">
+            <mat-form-field>
+              <input matInput type="text" [(ngModel)]="cliente.cpf" placeholder="Cpf" [ngModelOptions]="{standalone: true}">
+            </mat-form-field>
+          </p>
+          <p *ngIf="juridica">
+            <mat-form-field>
+              <input matInput type="text" [(ngModel)]="cliente.cnpj" placeholder="Cnpj" [ngModelOptions]="{standalone: true}">
+            </mat-form-field>
+          </p>
+        <button mat-fab type="submit" style="background: rgb(0, 187, 0);float: right;position:absolute;top: 0;right:20px">
+          <mat-icon>save</mat-icon>
+        </button>
+      </form>
+    </mat-card-content>
+  </mat-card>
+</div>

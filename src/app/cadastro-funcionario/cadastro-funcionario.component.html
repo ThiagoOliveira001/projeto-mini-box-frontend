@@ -1,0 +1,45 @@
+<div style="display: flex;justify-content:center">
+
+<mat-card style="width: 500px;">
+  <mat-card-header>
+    <mat-card-title>Cadastro Funcionario</mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <form #CadastroFuncionario="ngForm" (submit)="onSubmit()">
+      <p>
+        <mat-form-field>
+          <input matInput type="text" [(ngModel)]="funcionario.nome" placeholder="Nome" [ngModelOptions]="{standalone: true}">
+        </mat-form-field>
+      </p>
+      <p>
+        <mat-form-field>
+          <input matInput type="text" [(ngModel)]="funcionario.cpf" placeholder="Cpf" [ngModelOptions]="{standalone: true}">
+        </mat-form-field>
+      </p>
+      <!-- <p>
+        <mat-form-field>
+          <input matInput type="text" [(ngModel)]="funcionario.tel" placeholder="Telefone" [ngModelOptions]="{standalone: true}">
+        </mat-form-field>
+      </p>
+      <p>
+        <mat-form-field>
+          <input matInput type="text" [(ngModel)]="funcionario.end" placeholder="Endereco" [ngModelOptions]="{standalone: true}">
+        </mat-form-field>
+      </p> -->
+      <p>
+        <mat-form-field>
+          <input matInput type="text" [(ngModel)]="funcionario.cargo" placeholder="Cargo" [ngModelOptions]="{standalone: true}">
+        </mat-form-field>
+      </p>
+      <p>
+        <mat-form-field>
+          <input matInput type="text" [(ngModel)]="funcionario.salario" placeholder="Salario" [ngModelOptions]="{standalone: true}">
+        </mat-form-field>
+      </p>
+      <button mat-fab type="submit" style="background: rgb(0, 187, 0);float: right;position:absolute;top: 0;right:20px">
+        <mat-icon>save</mat-icon>
+      </button>
+    </form>
+  </mat-card-content>
+</mat-card>
+</div>

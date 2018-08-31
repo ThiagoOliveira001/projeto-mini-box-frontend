@@ -9,7 +9,7 @@
         <span>Funcionarios</span>
       </button>
       <mat-menu #Funcionarios="matMenu">
-        <button mat-menu-item>
+        <button mat-menu-item routerLink="cadastro-funcionario" routerLink="/cadastro-funcionario">
           <mat-icon>add_circle_outline</mat-icon>
           <span>Cadastrar</span>
         </button>
@@ -23,7 +23,7 @@
         <span>Clientes</span>
       </button>
       <mat-menu #Clientes="matMenu">
-        <button mat-menu-item>
+        <button mat-menu-item routerLink="/cadastro-cliente">
           <mat-icon>add_circle_outline</mat-icon>
           <span>Cadastrar</span>
         </button>
@@ -37,7 +37,7 @@
         <span>Produtos</span>
       </button>
       <mat-menu #Produtos="matMenu">
-        <button mat-menu-item>
+        <button mat-menu-item routerLink="/cadastro-produto">
           <mat-icon>add_circle_outline</mat-icon>
           <span>Cadastrar</span>
         </button>
@@ -46,7 +46,7 @@
           <span>Listar</span>
         </button>
       </mat-menu>
-      <button mat-menu-item>
+      <button mat-menu-item routerLink="/compra">
         <mat-icon>local_grocery_store</mat-icon>
         <span>Compra</span>
       </button>

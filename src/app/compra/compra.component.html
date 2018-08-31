@@ -1,0 +1,42 @@
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>Compra</mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <form #Compra="ngForm" (submit)="onSubmit()">
+    <mat-form-field>
+      <mat-select placeholder="Cliente" [(ngModel)]="compra.cliente" [ngModelOptions]="{standalone: true}">
+        <mat-option *ngFor="let cl of clientes" [value]="cl">
+          {{cl.nome}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+    <mat-form-field>
+    <mat-select placeholder="Funcionario" [(ngModel)]="compra.funcionario" [ngModelOptions]="{standalone: true}">
+      <mat-option *ngFor="let fn of funcionarios" [value]="fn">
+        {{fn.nome}}
+      </mat-option>
+    </mat-select>
+    </mat-form-field>
+    <mat-list>
+      <mat-list-item *ngFor="let pd of produtos">
+        <span>{{pd.nome}}</span>
+        <span>{{pd.preco}}</span>
+        <button (click)="addProd(pd)" mat-button>
+          <mat-icon>add_shopping_cart</mat-icon>
+        </button>
+      </mat-list-item>
+    </mat-list>
+    <button mat-fab type="submit" style="background: rgb(3, 201, 3);float: right;position:absolute;top: 0;right:20px">
+        <mat-icon>save</mat-icon>
+      </button>
+  </form>
+  <mat-list>
+    <mat-list-item *ngFor="let it of compra.itens">
+      <span>{{it.produto.nome}}</span>
+      <span style="margin-left: 20px">  QTDE: {{it.qtd}}</span>
+      <span style="margin-left: 20px">  R$ {{it.produto.preco * it.qtd}}</span>
+    </mat-list-item>
+  </mat-list>
+  </mat-card-content>
+</mat-card>

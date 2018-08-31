@@ -1,0 +1,38 @@
+<div style="display: flex;justify-content:center">
+<mat-card style="width: 500px;">
+  <mat-card-header>
+    <mat-card-tittle>Cadastro de Produto</mat-card-tittle>
+  </mat-card-header>
+  <mat-card-content>
+    <form #cadastroProduto="ngForm" (submit)="onSubmit()">
+      <p>
+        <mat-form-field>
+          <input matInput type="text" [(ngModel)]="produto.nome" placeholder="Nome" [ngModelOptions]="{standalone: true}">
+        </mat-form-field>
+      </p>
+      <p>
+        <mat-form-field>
+          <input matInput type="text" [(ngModel)]="produto.desc" placeholder="Descricao" [ngModelOptions]="{standalone: true}">
+        </mat-form-field>
+      </p>
+      <p>
+        <mat-form-field>
+          <mat-select  [(ngModel)]="produto.tipo" [ngModelOptions]="{standalone: true}" placeholder="Tipo">
+            <mat-option *ngFor="let tipo of tipos" [value]="tipo.nome">
+              {{tipo.nome}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </p>
+      <p>
+        <mat-form-field>
+          <input matInput type="text" [(ngModel)]="produto.preco" placeholder="Preco" [ngModelOptions]="{standalone: true}">
+        </mat-form-field>
+      </p>
+      <button mat-fab type="submit" style="background: rgb(3, 201, 3);float: right;position:absolute;top: 0;right:20px">
+        <mat-icon>save</mat-icon>
+      </button>
+    </form>
+  </mat-card-content>
+</mat-card>
+</div>
